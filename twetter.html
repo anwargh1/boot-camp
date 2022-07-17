@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tweeter</title>
+    <link href="https://fonts.googleapis.com/css?family=Balthazar" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="twetter.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  </head>
+  
+  <body onload ="renderer1.renderPosts(tweeter1.getPost1())">
+    <div id="container">
+        <h1 id="title">Tweeter</h1>
+        <input type="text" placeholder="What's on your mind?" id="input">
+        <button id="post" >Twit</button>
+        
+        
+   <script id="temp" type="text/x-handlebars-template">
+    {{#each post}}
+        <div id="post">
+            <h1 id="h2">{{text}}</h1>
+                {{#each comments}}
+                  <div class="anw">
+                     <button id="delcom">x</button>
+                     <p id="an">{{text}}</p>
+                 </div>
+                     {{/each}}
+                     
+                 <input type="text" id="inp" placeholder="got something to say?">
+                   <button id="add">Comment</button><br>
+                    <button id="del">Delete post</button>
+                       </div>
+             {{/each}}
+    </script>
+ 
+    <div id="posts"></div>
+ 
+    <script src="render.js"></script>
+     <script src="model.js"></script> 
+     <script src="main.js"></script> 
+  </body>
+</html>
